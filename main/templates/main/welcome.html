@@ -2,25 +2,78 @@
 {% load static %}
 
 {% block content %}
-<div class="welcome-animation" id="welcome-animation">
-    <div class="logo-container">
-        <div class="animated-logo logo-1">
-            <img src="{% static 'images/logo1.jpg' %}" alt="QuiteScan">
+<div class="welcome-page">
+    <div class="welcome-header">
+        <h1>Welcome to QPEF Fusion</h1>
+        <p class="welcome-subtitle">Our name comes from the first letters of the systems we created—Quitescan, PayFlow, Explore Biliran, and Foodie Finder. Each system is built by a developer, and you can meet them below.</p>
+    </div>
+    
+    <div class="welcome-animation" id="welcome-animation">
+        <div class="logo-container">
+            <div class="animated-logo logo-1">
+                <img src="{% static 'images/logo1.jpg' %}" alt="QuiteScan">
+            </div>
+            <div class="animated-logo logo-2">
+                <img src="{% static 'images/logo2.png' %}" alt="PayFlow">
+            </div>
+            <div class="animated-logo logo-3">
+                <img src="{% static 'images/logo3.jpg' %}" alt="ExploreBil">
+            </div>
+            <div class="animated-logo logo-4">
+                <img src="{% static 'images/logo4.jpg' %}" alt="FoodieFinder">
+            </div>
         </div>
-        <div class="animated-logo logo-2">
-            <img src="{% static 'images/logo2.png' %}" alt="PayFlow">
-        </div>
-        <div class="animated-logo logo-3">
-            <img src="{% static 'images/logo3.jpg' %}" alt="ExploreBil">
-        </div>
-        <div class="animated-logo logo-4">
-            <img src="{% static 'images/logo4.jpg' %}" alt="FoodieFinder">
+        <div class="flash-effect" id="flash-effect"></div>
+        <div class="fusion-logo-reveal" id="fusion-logo-reveal">
+            <img src="{% static 'images/Fusionlogo.png' %}" alt="Fusion Logo" class="final-fusion-logo">
         </div>
     </div>
-    <div class="flash-effect" id="flash-effect"></div>
-    <div class="fusion-logo-reveal" id="fusion-logo-reveal">
-        <img src="{% static 'images/Fusionlogo.png' %}" alt="Fusion Logo" class="final-fusion-logo">
+    
+    <div class="team-section">
+        <h2>About Our Team</h2>
+        <div class="team-grid">
+            <div class="team-member">
+                <div class="profile-pic no-image">MV</div>
+                <h3>Marjon C Vera</h3>
+                <p>Lead Developer & System Architect</p>
+                <div class="social-links">
+                    <a href="https://www.facebook.com/share/1BvZ12P7nS/" target="_blank">📘</a>
+                    <a href="mailto:marjon@example.com">📧</a>
+                </div>
+            </div>
+            <div class="team-member">
+                <div class="profile-pic no-image">ER</div>
+                <h3>Eliza Marie Rosario</h3>
+                <p>Frontend Developer & UI/UX Designer</p>
+                <div class="social-links">
+                    <a href="https://www.facebook.com/eliza.marie.773981" target="_blank">📘</a>
+                    <a href="mailto:eliza@example.com">📧</a>
+                </div>
+            </div>
+            <div class="team-member">
+                <div class="profile-pic no-image">CO</div>
+                <h3>Christine Elaine Oliverio</h3>
+                <p>Backend Developer & Database Specialist</p>
+                <div class="social-links">
+                    <a href="https://www.facebook.com/christine.elaine.oliverio.2024" target="_blank">📘</a>
+                    <a href="mailto:christine@example.com">📧</a>
+                </div>
+            </div>
+            <div class="team-member">
+                <div class="profile-pic no-image">CV</div>
+                <h3>Carl Marco Vaporoso</h3>
+                <p>Full Stack Developer & Project Manager</p>
+                <div class="social-links">
+                    <a href="https://www.facebook.com/carl.marco.regala.vaporoso" target="_blank">📘</a>
+                    <a href="mailto:carl@example.com">📧</a>
+                </div>
+            </div>
+        </div>
     </div>
+</div>
+
+<div class="continue-section" id="continue-section" style="display: none; text-align: center; margin-top: 30px;">
+    <a href="{% url 'dashboard' %}" class="btn btn-primary">Continue to Dashboard</a>
 </div>
 
 <script>
@@ -56,8 +109,8 @@ document.addEventListener('DOMContentLoaded', function() {
     }, 5000);
     
     setTimeout(() => {
-        window.location.href = '{% url "dashboard" %}';
-    }, 6500);
+        document.getElementById('continue-section').style.display = 'block';
+    }, 6000);
 });
 </script>
 {% endblock %}
