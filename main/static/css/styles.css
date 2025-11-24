@@ -396,10 +396,10 @@ body {
     box-shadow: 0 8px 20px rgba(0, 0, 0, 0.3);
 }
 
-.logo-1 { top: 0; left: 50%; transform: translateX(-50%); }
-.logo-2 { top: 50%; right: 0; transform: translateY(-50%); }
-.logo-3 { bottom: 0; left: 50%; transform: translateX(-50%); }
-.logo-4 { top: 50%; left: 0; transform: translateY(-50%); }
+.logo-1 { top: 50px; left: 50%; transform: translateX(-50%); }
+.logo-2 { top: 50%; right: 50px; transform: translateY(-50%); }
+.logo-3 { bottom: 50px; left: 50%; transform: translateX(-50%); }
+.logo-4 { top: 50%; left: 50px; transform: translateY(-50%); }
 
 .animated-logo.appear {
     opacity: 1;
@@ -553,6 +553,7 @@ body {
 .header-right {
     display: flex;
     align-items: center;
+    gap: 15px;
 }
 
 .about-btn {
