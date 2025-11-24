@@ -29,47 +29,7 @@
         </div>
     </div>
     
-    <div class="team-section">
-        <h2>About Our Team</h2>
-        <div class="team-grid">
-            <div class="team-member">
-                <div class="profile-pic no-image">MV</div>
-                <h3>Marjon C Vera</h3>
-                <p>Lead Developer & System Architect</p>
-                <div class="social-links">
-                    <a href="https://www.facebook.com/share/1BvZ12P7nS/" target="_blank">📘</a>
-                    <a href="mailto:marjon@example.com">📧</a>
-                </div>
-            </div>
-            <div class="team-member">
-                <div class="profile-pic no-image">ER</div>
-                <h3>Eliza Marie Rosario</h3>
-                <p>Frontend Developer & UI/UX Designer</p>
-                <div class="social-links">
-                    <a href="https://www.facebook.com/eliza.marie.773981" target="_blank">📘</a>
-                    <a href="mailto:eliza@example.com">📧</a>
-                </div>
-            </div>
-            <div class="team-member">
-                <div class="profile-pic no-image">CO</div>
-                <h3>Christine Elaine Oliverio</h3>
-                <p>Backend Developer & Database Specialist</p>
-                <div class="social-links">
-                    <a href="https://www.facebook.com/christine.elaine.oliverio.2024" target="_blank">📘</a>
-                    <a href="mailto:christine@example.com">📧</a>
-                </div>
-            </div>
-            <div class="team-member">
-                <div class="profile-pic no-image">CV</div>
-                <h3>Carl Marco Vaporoso</h3>
-                <p>Full Stack Developer & Project Manager</p>
-                <div class="social-links">
-                    <a href="https://www.facebook.com/carl.marco.regala.vaporoso" target="_blank">📘</a>
-                    <a href="mailto:carl@example.com">📧</a>
-                </div>
-            </div>
-        </div>
-    </div>
+
 </div>
 
 <div class="continue-section" id="continue-section" style="display: none; text-align: center; margin-top: 30px;">
@@ -78,39 +38,43 @@
 
 <script>
 document.addEventListener('DOMContentLoaded', function() {
+    // Enhanced professional animation sequence
     setTimeout(() => {
         document.querySelector('.logo-1').classList.add('appear');
-    }, 500);
+    }, 800);
     
     setTimeout(() => {
         document.querySelector('.logo-2').classList.add('appear');
-    }, 1000);
+    }, 1200);
     
     setTimeout(() => {
         document.querySelector('.logo-3').classList.add('appear');
-    }, 1500);
+    }, 1600);
     
     setTimeout(() => {
         document.querySelector('.logo-4').classList.add('appear');
     }, 2000);
     
     setTimeout(() => {
-        document.querySelectorAll('.animated-logo').forEach(logo => {
-            logo.classList.add('move-center');
+        document.querySelectorAll('.animated-logo').forEach((logo, index) => {
+            setTimeout(() => {
+                logo.classList.add('move-center');
+            }, index * 100);
         });
-    }, 3000);
+    }, 3500);
     
     setTimeout(() => {
         document.getElementById('flash-effect').classList.add('flash');
-    }, 4500);
+    }, 5200);
     
     setTimeout(() => {
         document.getElementById('fusion-logo-reveal').classList.add('show');
-    }, 5000);
+    }, 5800);
     
     setTimeout(() => {
         document.getElementById('continue-section').style.display = 'block';
-    }, 6000);
+        document.getElementById('continue-section').classList.add('fade-in');
+    }, 7000);
 });
 </script>
 {% endblock %}
