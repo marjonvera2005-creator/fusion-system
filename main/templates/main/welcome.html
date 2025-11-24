@@ -1,0 +1,63 @@
+{% extends 'main/base.html' %}
+{% load static %}
+
+{% block content %}
+<div class="welcome-animation" id="welcome-animation">
+    <div class="logo-container">
+        <div class="animated-logo logo-1">
+            <img src="{% static 'images/logo1.jpg' %}" alt="QuiteScan">
+        </div>
+        <div class="animated-logo logo-2">
+            <img src="{% static 'images/logo2.png' %}" alt="PayFlow">
+        </div>
+        <div class="animated-logo logo-3">
+            <img src="{% static 'images/logo3.jpg' %}" alt="ExploreBil">
+        </div>
+        <div class="animated-logo logo-4">
+            <img src="{% static 'images/logo4.jpg' %}" alt="FoodieFinder">
+        </div>
+    </div>
+    <div class="flash-effect" id="flash-effect"></div>
+    <div class="fusion-logo-reveal" id="fusion-logo-reveal">
+        <img src="{% static 'images/Fusionlogo.png' %}" alt="Fusion Logo" class="final-fusion-logo">
+    </div>
+</div>
+
+<script>
+document.addEventListener('DOMContentLoaded', function() {
+    setTimeout(() => {
+        document.querySelector('.logo-1').classList.add('appear');
+    }, 500);
+    
+    setTimeout(() => {
+        document.querySelector('.logo-2').classList.add('appear');
+    }, 1000);
+    
+    setTimeout(() => {
+        document.querySelector('.logo-3').classList.add('appear');
+    }, 1500);
+    
+    setTimeout(() => {
+        document.querySelector('.logo-4').classList.add('appear');
+    }, 2000);
+    
+    setTimeout(() => {
+        document.querySelectorAll('.animated-logo').forEach(logo => {
+            logo.classList.add('move-center');
+        });
+    }, 3000);
+    
+    setTimeout(() => {
+        document.getElementById('flash-effect').classList.add('flash');
+    }, 4500);
+    
+    setTimeout(() => {
+        document.getElementById('fusion-logo-reveal').classList.add('show');
+    }, 5000);
+    
+    setTimeout(() => {
+        window.location.href = '{% url "dashboard" %}';
+    }, 6500);
+});
+</script>
+{% endblock %}

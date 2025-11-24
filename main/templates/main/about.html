@@ -1,0 +1,75 @@
+{% extends 'main/base.html' %}
+{% load static %}
+
+{% block content %}
+<header class="header">
+    <div class="logo-section">
+        <img src="{% static 'images/Fusionlogo.png' %}" alt="Fusion Logo" class="fusion-logo">
+        <h1 class="system-name">Fusion</h1>
+    </div>
+    <div class="header-right">
+        <a href="{% url 'dashboard' %}" class="about-btn">← Back</a>
+    </div>
+</header>
+
+<main class="main-container">
+    <section class="about-us">
+        <h2>About Our Team</h2>
+        <div class="team-grid">
+            <div class="team-member">
+                <img src="{% static 'images/profile1.jpg' %}" alt="Marjon C. Vera" class="profile-pic">
+                <h4 class="member-name">Marjon C. Vera</h4>
+                <p class="member-description">Now in his third year of studying Computer Science at Biliran Province State University, this 20-year-old developer is the creator of QUITESCAN. He continually sharpens his skills through hands-on projects and enjoys exploring new technologies that help him build practical solutions to everyday challenges. Driven by his passion for innovation, he aims to pursue a career in the IT field, with the long-term dream of working in a major IT company where he can contribute to creating impactful and user-friendly applications.</p>
+            </div>
+            <div class="team-member">
+                <img src="{% static 'images/profile2.jpg' %}" alt="Eliza Marie Rosario" class="profile-pic">
+                <h4 class="member-name">Eliza Marie Rosario</h4>
+                <p class="member-description">A 22-year-old 3rd year Computer Science student at Biliran Province State University and the developer of PayFlow. She aims to become a software developer and is committed to improving her skills through practice and real projects. She enjoys building systems that solve everyday problems and likes exploring new tools that help her grow in the field. Her goal is to create useful and accessible applications that make tasks easier for people.</p>
+            </div>
+            <div class="team-member">
+                <img src="{% static 'images/profile3.jpg' %}" alt="Christine Oliverio" class="profile-pic">
+                <h4 class="member-name">Christine Oliverio</h4>
+                <p class="member-description">The developer of Explore Biliran is a third-year Computer Science student at Biliran Province State University and is currently 21 years old. She is eager to deepen her knowledge of programming and continuously improves her skills through hands-on practice and real-world projects. Passionate about creating systems that benefit communities, she enjoys exploring new technologies that support her growth in the field. Her goal is to build useful, responsive, and accessible applications that make information easier for people to navigate and understand, and to pursue a career aligned with her Computer Science course.</p>
+            </div>
+            <div class="team-member">
+                <img src="{% static 'images/profile4.jpg' %}" alt="Carl Marco Vaporoso" class="profile-pic">
+                <h4 class="member-name">Carl Marco Vaporoso</h4>
+                <p class="member-description">Currently a third-year Computer Science student at Biliran Province State University, this 22-year-old developer created FoodieFinder. With a goal of becoming a graphic designer, he continues to refine his skills through hands-on practice and real-world projects. He enjoys developing systems that address everyday needs and exploring new tools that enhance his growth in both design and technology. His aim is to create practical and accessible applications that make tasks simpler for users.</p>
+            </div>
+        </div>
+    </section>
+    
+    <section class="contact-us">
+        <div class="contact-container">
+            <h2>Contact Us</h2>
+            <div class="contact-grid">
+                 <div class="contact-item">
+                    <h4>QuiteScan Developer</h4>
+                    <p>Marjon Vera</p>
+                    <p>Email: marjonvera2005@gmail.com</p>
+                    <p>Phone: 09355984283</p>
+                </div>
+                <div class="contact-item">
+                    <h4>PayFlow Developer</h4>
+                    <p>Eliza Marie Rosario</p>
+                    <p>Email: elizamarierosario@gmail.com</p>
+                    <p>Phone: 09158305791</p>
+                </div>
+                
+                <div class="contact-item">
+                    <h4>ExploreBiliran Developer</h4>
+                    <p>Christine Elaine Oliverio</p>
+                    <p>Email: christineleaineoliverio081@gmail.com</p>
+                    <p>Phone: 09533952948</p>
+                </div>
+                <div class="contact-item">
+                    <h4>FoodieFinder Developer</h4>
+                    <p>Carl Marco Vaporoso</p>
+                    <p>Email: vaporosocarlmarco19@gmail.com</p>
+                    <p>Phone: 09302564442</p>
+                </div>
+            </div>
+        </div>
+    </section>
+</main>
+{% endblock %}

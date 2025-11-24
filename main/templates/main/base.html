@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>{% block title %}Fusion Systems{% endblock %}</title>
+    {% load static %}
+    <link rel="stylesheet" href="{% static 'css/styles.css' %}">
+</head>
+<body>
+    {% block content %}
+    {% endblock %}
+    
+    <script>
+        function checkNotifications() {
+            fetch('/notifications/')
+                .then(response => response.json())
+                .then(data => {
+                    document.getElementById('notification-count').textContent = data.count;
+                    if (data.count > 0) {
+                        document.getElementById('notification-icon').style.display = 'block';
+                    }
+                    updateNotificationList(data.notifications);
+                });
+        }
+        
+        function updateNotificationList(notifications) {
+            const list = document.getElementById('notification-list');
+            if (!list) return;
+            
+            if (notifications.length === 0) {
+                list.innerHTML = '<div class="no-notifications">No new notifications</div>';
+                return;
+            }
+            
+            list.innerHTML = notifications.map(notif => `
+                <div class="notification-item">
+                    <div class="notification-admin">${notif.admin_name}</div>
+                    <div class="notification-system">accessed ${notif.system_name}</div>
+                    <div class="notification-time">${notif.accessed_at}</div>
+                </div>
+            `).join('');
+        }
+        
+        function toggleNotifications() {
+            const dropdown = document.getElementById('notification-dropdown');
+            if (dropdown) {
+                dropdown.style.display = dropdown.style.display === 'block' ? 'none' : 'block';
+            }
+        }
+        
+        {% if user.is_authenticated %}
+            setInterval(checkNotifications, 5000);
+            checkNotifications();
+        {% endif %}
+    </script>
+</body>
+</html>

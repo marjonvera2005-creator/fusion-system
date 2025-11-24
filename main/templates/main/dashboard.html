@@ -1,0 +1,53 @@
+{% extends 'main/base.html' %}
+{% load static %}
+
+{% block content %}
+<header class="header">
+    <div class="logo-section">
+        <img src="{% static 'images/Fusionlogo.png' %}" alt="Fusion Logo" class="fusion-logo">
+        <h1 class="system-name">Q-P-E-F FUSION</h1>
+    </div>
+    <div class="header-right">
+        <a href="{% url 'about' %}" class="about-btn">About Us</a>
+    </div>
+</header>
+
+<main class="main-container">
+    <div class="systems-grid">
+        <div class="system-item">
+            <div class="circle yellow">
+                <img src="{% static 'images/logo1.jpg' %}" alt="QuiteScan Logo" class="circle-logo">
+            </div>
+            <h3 class="system-title">QUITESCAN</h3>
+            <p class="system-description">QUITESCAN is a web-based attendance system that uses QR codes to track student check-ins and check-outs efficiently.</p>
+            <a href="https://quitescan.onrender.com/" target="_blank" class="system-link">Visit QuiteScan</a>
+        </div>
+        <div class="system-item">
+            <div class="circle pink">
+                <img src="{% static 'images/logo2.png' %}" alt="PayFlow Logo" class="circle-logo">
+            </div>
+            <h3 class="system-title">PAYFLOW</h3>
+            <p class="system-description">PayFlow is a simple web app to track expenses, manage budgets, and get bill reminders.</p>
+            <a href="https://payflow-budget-app.onrender.com/" target="_blank" class="system-link">Visit PayFlow</a>
+        </div>
+        <div class="system-item">
+            <div class="circle green">
+                <img src="{% static 'images/logo3.jpg' %}" alt="ExploreBil Logo" class="circle-logo">
+            </div>
+            <h3 class="system-title">EXPLOREBIL</h3>
+            <p class="system-description">Explore Biliran is a web app that helps users discover tourist spots and explore the different municipalities of Biliran Province.</p>
+            <a href="https://explorebil.onrender.com" alt="ExploreBil Logo" class="system-link">Visit ExploreBil</a>
+        </div>
+        <div class="system-item">
+            <div class="circle blue">
+                <img src="{% static 'images/logo4.jpg' %}" alt="FoodieFinder Logo" class="circle-logo">
+            </div>
+            <h3 class="system-title">FOODIEFINDER</h3>
+            <p class="system-description">Foodie Finder helps you quickly find restaurants, meals, and snacks. It makes discovering food simple and fun.</p>
+            <a href="https://foodie-finder-naval-2zqm.onrender.com/" target="_blank" class="system-link">Visit FoodieFinder</a>
+        </div>
+    </div>
+
+
+</main>
+{% endblock %}
