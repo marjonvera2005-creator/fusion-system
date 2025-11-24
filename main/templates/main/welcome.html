@@ -66,13 +66,16 @@ document.addEventListener('DOMContentLoaded', function() {
     }, 5200);
     
     setTimeout(() => {
+        document.querySelectorAll('.animated-logo').forEach(logo => {
+            logo.style.opacity = '0';
+        });
         document.getElementById('fusion-logo-reveal').classList.add('show');
     }, 5800);
     
     setTimeout(() => {
         document.getElementById('continue-section').style.display = 'block';
         document.getElementById('continue-section').classList.add('fade-in');
-    }, 7000);
+    }, 6500);
 });
 </script>
 {% endblock %}
