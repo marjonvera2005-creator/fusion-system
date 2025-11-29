@@ -4,12 +4,12 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>{% block title %}Fusion Systems - QPEF Student Projects{% endblock %}</title>
-    <meta name="description" content="Fusion Systems showcases four innovative student projects: QuiteScan, PayFlow, ExploreBil, and FoodieFinder. Built by Computer Science students from Biliran Province State University.">
-    <meta name="keywords" content="Fusion Systems, QuiteScan, PayFlow, ExploreBil, FoodieFinder, student projects, web applications, Biliran Province State University">
+    <title>{% block title %}Fusion System - Official Website{% endblock %}</title>
+    <meta name="description" content="Fusion System - The official platform showcasing QuiteScan, PayFlow, ExploreBil, and FoodieFinder. Four innovative web applications by Computer Science students.">
+    <meta name="keywords" content="Fusion System, Fusion Systems, QuiteScan, PayFlow, ExploreBil, FoodieFinder, web applications, student projects">
     <meta name="author" content="Marjon Vera, Eliza Marie Rosario, Christine Oliverio, Carl Marco Vaporoso">
-    <meta property="og:title" content="Fusion Systems - QPEF Student Projects">
-    <meta property="og:description" content="Discover four innovative web applications created by Computer Science students: QuiteScan attendance system, PayFlow budget tracker, ExploreBil tourism guide, and FoodieFinder restaurant locator.">
+    <meta property="og:title" content="Fusion System - Official Website">
+    <meta property="og:description" content="Fusion System - Official platform featuring QuiteScan attendance system, PayFlow budget tracker, ExploreBil tourism guide, and FoodieFinder restaurant locator.">
     <meta property="og:type" content="website">
     <meta property="og:url" content="https://your-domain.onrender.com">
     <meta property="og:image" content="{% static 'images/Fusionlogo.png' %}">
@@ -19,6 +19,21 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="{% static 'css/styles.css' %}">
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "WebSite",
+        "name": "Fusion System",
+        "alternateName": "Fusion Systems",
+        "url": "https://your-domain.onrender.com",
+        "description": "Fusion System - Official platform featuring QuiteScan, PayFlow, ExploreBil, and FoodieFinder web applications",
+        "potentialAction": {
+            "@type": "SearchAction",
+            "target": "https://your-domain.onrender.com/?q={search_term_string}",
+            "query-input": "required name=search_term_string"
+        }
+    }
+    </script>
 </head>
 <body>
     {% block content %}
