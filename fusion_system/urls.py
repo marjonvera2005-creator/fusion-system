@@ -16,8 +16,18 @@ Including another URLconf
 """
 from django.contrib import admin
 from django.urls import path, include
+from django.views.generic import TemplateView
+from django.http import HttpResponse
+from django.conf import settings
+from django.conf.urls.static import static
+
+def robots_txt(request):
+    content = "User-agent: *\nAllow: /\nSitemap: https://your-domain.onrender.com/sitemap.xml"
+    return HttpResponse(content, content_type="text/plain")
 
 urlpatterns = [
     path('admin/', admin.site.urls),
     path('', include('main.urls')),
-]
+    path('sitemap.xml', TemplateView.as_view(template_name='sitemap.xml', content_type='application/xml')),
+    path('robots.txt', robots_txt),
+] + static(settings.STATIC_URL, document_root=settings.STATIC_ROOT)
